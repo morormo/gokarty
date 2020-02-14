@@ -3,13 +3,35 @@ $color-menu: #191919;
 $color-red: #d52a2a;
 
 /* Fonts */
-@font-face{font-family: Manrope; src:url(../vendor/manrope-regular.otf);}
 
+@font-face {
+  font-family: 'Manrope';
+  src: url(../vendor/manrope-regular.otf);
+}
+/* Global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Manrope';
+}
+
+.row {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+}
+
+.section-title {
+  line-height: 1.29;
+  font-size: 56px;
+  margin: 80px 0 80px 0;
+  font-weight: bold;
+  font-family: Manrope;
+  
+  i{
+    color: $color-red;
+  }
 }
 
 a {
@@ -18,31 +40,27 @@ a {
 }
 
 .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  max-width: 1920px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-
 }
 
 .left-side {
   flex: 0 0 16.6666666667%;
   max-width: 16.6666666667%;
-  box-shadow: 1px 0 0 0 #e4e4e4;
-  
 
   .logo {
     font-size: 48px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.2;
     letter-spacing: -0.2px;
     text-align: center;
-    margin-top: 48px;
+    padding: 50.5px 0;
+    width: 16.6666666667%;
     cursor: pointer;
-    
+    position: fixed;
+    background-color: white;
 
     .firstLetter {
       color: $color-red;
@@ -53,15 +71,17 @@ a {
 .right-side {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
+  border-left: 1px solid #e4e4e4;
+  
 
   .menu {
-    height: 10%;
     width: 100%;
-    margin-top: 64px;
+    padding: 64px 0 64px 7.6%;
     font-size: 16px;
     line-height: 30px;
     letter-spacing: 0.2px;
-    padding-left: 7.6%;
+    position: fixed;
+    background-color: white;
 
     ul {
       padding: 0;
@@ -73,35 +93,26 @@ a {
         margin: 0 0 0 40px;
       }
 
-      li:last-child {
-        float: right;
-        padding-right: 9.5%;
+      li:first-child {
+        margin: 0;
       }
     }
   }
-
+  /* Strefa 1*/
   .join {
     width: 100%;
+    margin-top: 160px;
+    padding-left: 7.6%;
+    display: flex;
+    flex-wrap: wrap;
 
     .main {
-      padding-left: 7.6%;
+      flex: 0 0 50%;
+      max-width: 50%;
 
       .title {
         padding-top: 224px;
         font-weight: bold;
-        
-
-        /* .Preheading {
-          float: left;
-          margin-top: 1.3%;
-        }*/
-
-        .Photo {
-          position: absolute;
-          right: 7.8%;
-          z-index: -1;
-          top: 128px;
-        }
         
         .titleText {
           float: left;
@@ -113,10 +124,9 @@ a {
           i {
             color: $color-red;
           }
-          
         }
       }
-
+      
       .subtitle {
         clear: both;
         padding: 40px 0;
@@ -127,17 +137,18 @@ a {
       .btn-red {
         background: $color-red;
         width: 228px;
-        line-height: 64px; 
+        line-height: 64px;
         color: white;
         border: 0;
         font-size: 16px;
         letter-spacing: -0,2px;
-        cursor: pointer; 
+        cursor: pointer;
         
         i {
           margin-left: 12px;
         }
       }
+
       .roll {
         font-family: Manrope;
         font-size: 16px;
@@ -153,5 +164,525 @@ a {
       }
     }
   }
+  /* Strefa 2*/
+  .rank {
+    padding: 160px 0 160px 7.6%;
 
+    .ranking-box {
+      display: flex;
+      flex-wrap: wrap;
+      
+      .left-rank {
+        flex: 0 0 40%;
+        max-width: 40%;
+        align-items: center;
+        justify-content: center;
+
+        .podium {
+          align-items: center;
+          justify-content: center;
+
+          .podium-point {
+            font-size: 20px;
+            font-weight: bold;
+            color: #191919;
+
+          }
+          font-size: 14px;
+          letter-spacing: -0.2px;
+          color: #757575;
+        }
+
+        .podium-1 {
+          width: 137px;
+          height: 115px;
+          background: #f8f8f8;
+          float: left;
+          border-top: 5px solid #FFD700;
+          text-align: center;
+        }
+
+        .podium-2 {
+          width: 137px;
+          height: 94px;
+          background: #f8f8f8;
+          float: left;
+          margin-top: 21px;
+          border-top: 5px solid	#C0C0C0;
+          text-align: center;
+        }
+
+        .podium-3 {
+          width: 137px;
+          height: 73px;
+          background: #f8f8f8;
+          float: left;
+          margin-top: 42px;
+          border-top: 5px solid #A0522D;
+          text-align: center;
+        }
+
+      }
+
+      .rank-table {
+        flex: 0 0 60%;
+        max-width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .rank-table-right, .rank-table-left {
+          flex: 0 0 50%;
+          max-width: 50%;
+          
+          th {
+            padding-bottom: 16px;
+          }
+
+          .number {
+            padding-right: 16px;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: -0.2px;
+            color: #757575;
+          }
+
+          .name {
+            width: 200px;
+            color: #191919;
+            padding-right: 40px;
+          }
+
+          .points {
+            color: #191919;
+            text-align: right;
+
+          }
+        }
+
+        .rank-table-right {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+  /* Strefa 3 */
+  .time-table {
+    padding: 160px 0 160px 7.6%;
+    background-color: #f8f8f8;
+    width: 100%;
+    margin-right: 0;
+    
+    .timetable-box {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      
+      .box-first, .box-second, .box-third {
+        flex: 0 0 33.33333%;
+        max-width: 31%;
+        padding: 64px;
+        background-color: white;
+
+        .date {
+          display: flex;
+          flex-wrap: wrap;
+        
+          .race {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: -0,2px;
+            color: #757575;
+          }
+
+          .date-race {
+            font-size: 32px;
+            line-height: 1.33;
+            font-weight: bold;
+            color: #191919;
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+
+        .hour, .standard {
+          flex: 0 0 30%;
+          max-width: 30%;
+          padding-top: 64px;
+        }
+      }
+
+      .box-first, .box-second {
+        margin-right: 32px;
+      }
+    }
+
+    .second-btn {
+      margin: 40px 16px 40px 0;
+      width: 64px;
+      height: 64px;
+      border: solid 1px #e4e4e4;
+      background: white;
+    }
+  }
+}
+
+/* HISTORIA WYŚCIGÓW */
+.history {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  background-color: #000000;
+    
+  .right-side {
+    padding: 160px 0 160px 7.6%;
+     
+    .history-title {
+      line-height: 1.29;
+      font-size: 56px;
+      margin: 80px 0 80px 0;
+      font-weight: bold;
+      font-family: Manrope;
+      color: #ffffff;
+      padding-bottom: 80px;
+        
+      i{
+        color: $color-red;
+      }
+    }
+
+    .section-history {
+      flex-wrap: wrap;
+      display: flex;
+      padding-right: 7.6%;
+
+      .history-left {
+        flex: 0 0 17.8%;
+        max-width: 17.8%;
+
+        .history-race {
+          width: 100%;
+          display: block;
+          background-color: #0e0e0e;
+          height: 96px;
+          border: 0;
+          margin-bottom: 7px;
+          text-align: left;
+          padding-left: 40px;
+            
+          span {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.6;
+            letter-spacing: -0.2px;
+            color: white;
+          }
+
+          p {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.5;
+            color: white;
+          }
+
+          &.active {
+            background: white;
+            box-shadow: inset 4px 0 0 0 #d52a2a;
+            
+            span, p {
+              color: black;
+            }
+          }
+
+          &:hover {
+            background: white;
+            box-shadow: inset 4px 0 0 0 #d52a2a;
+              
+            span, p {
+              color: black;
+            }
+          }
+        }
+        
+      }
+      
+      .history-right {
+        flex: 0 0 82.2%;
+        max-width: 82.2%;
+        text-align: right;
+        
+        button {
+          border: solid 1px #333333;
+          background: none;
+          color: #757575;
+          padding: 9px 32px;
+          line-height: 1.88;
+          letter-spacing: -0.2px;
+          font-size: 16px;
+          
+          &:first-child {
+            margin-right: 8px;
+          }
+
+          &.active {
+            background: white;
+            border: 0;
+            color: #191919;
+            font-size: 16px;
+            line-height: 1.88;
+            letter-spacing: -0.2px;
+            border: solid 1px #ffffff;
+          }
+
+          &:hover {
+            background: white;
+            border: 0;
+            color: #191919;
+            font-size: 16px;
+            line-height: 1.88;
+            letter-spacing: -0.2px;
+            border: solid 1px #ffffff;
+          }
+        }
+
+        .race-table {
+          color: white;
+          margin-left: 64px;
+
+          table {
+            width: 100%;
+            margin-top: 36px;
+
+            tr:first-child {
+              color: #757575;
+              font-size: 14px;
+              font-weight: normal;
+              line-height: 1.71;
+              letter-spacing: -0.2px;
+              text-align: center;
+            }
+
+            tr {
+              box-shadow: 0 1px 0 0 #333333;
+              
+              
+              th {
+                text-align: center;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 1.5;
+                letter-spacing: -0.2px;
+                padding: 16px 0;
+              }
+
+              .position {
+                color: #757575;
+              }
+
+              .time {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }   
+}
+/* Zawodnicy */
+.personal-data {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+
+  .right-side {
+    padding: 160px 7.6% 160px 7.6%;
+
+    .personal-title {
+      line-height: 1.29;
+      font-size: 56px;
+      margin: 80px 0 100px 0;
+      font-weight: bold;
+      font-family: Manrope;
+      color: #000000;
+      padding-bottom: 80px;
+      
+        
+      i{
+        color: $color-red;
+      }
+    }
+    
+    .card {
+      flex: 0 0 25%;
+      max-width: 25%;
+      margin-bottom: 48px;
+      padding-right: 32px;
+        
+
+      .card-image {
+        height: 300px;
+        background-color: #e4e4e4;
+        margin-bottom: 24px;
+        border-radius: 5%;
+        
+      }
+    }
+  }
+}
+/* Statystyki */
+.statistics {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #000000;
+  color: white;
+
+  .right-side {
+    padding: 160px 0 160px 7.6%;
+
+    .statistics-title {
+      line-height: 1.29;
+      font-size: 56px;
+      margin: 80px 0 100px 0;
+      font-weight: bold;
+      font-family: Manrope;
+      padding-bottom: 80px;
+        
+      i{
+        color: $color-red;
+      }
+    }
+
+    .row {
+      margin-bottom: 32px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      .box {
+        flex: 0 0 33%;
+        max-width: 31%;
+        height: 348px;
+        background: #0e0e0e;
+        padding: 64px;
+        margin-right: 32px;
+        
+        &:last-child {
+          margin-right: 0;
+        }
+
+        h1 {
+          font-size: 116px;
+          font-weight: bold;
+          color: #d52a2a;
+          line-height: 1;
+          margin-bottom: 40px;
+        }
+
+        h2 {
+          font-size: 24px;
+          line-height: 1.33;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.5;
+          letter-spacing: -0.2px;
+        }
+      }
+    }
+  }
+}
+
+/* Footer */
+footer {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  .right-side {
+    padding: 128px 0 128px 128px;
+
+    .footer-left {
+      flex: 0 0 40%;
+      max-width: 40%;
+
+      .logo {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+        cursor: pointer;
+
+        .firstLetter {
+          color: $color-red;
+        }
+      }
+    
+      p {
+        font-size: 16px;
+        line-height: 1.88;
+        letter-spacing: -0.2px;
+        color: #191919;
+        margin-top: 16px;
+      }
+    }
+    
+    .footer-right {
+      flex: 0 0 60%;
+      position: relative;
+
+      .menu-footer {
+        font-size: 16px;
+        line-height: 1.88;
+        letter-spacing: 0.2px;
+        color: #191919;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -30%);
+        
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        
+          li {
+            display: inline-block;
+            margin: 0 0 0 40px;
+            
+            &:first-child {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  .left-side {
+    display: none;
+  }
+  .main-image {
+    display: none;
+    
+  }
+  .right-side {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+  }
+  .join {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .main {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
